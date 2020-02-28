@@ -1,8 +1,9 @@
-# Tyson dotfiles
+# Tyson dotfiles and Ming readme is now mine!
 
 ## dotfiles
 
-Your dotfiles are how you personalize your system. These are mine.
+Your dotfiles are how you personalize your system. These are mine. I stole them from Tyson. Who stole them from Holman.
+I stole this readme copy from Ming.
 
 I was a little tired of having long alias files and everything strewn about
 (which is extremely common on other dotfiles projects, too). That led to this
@@ -16,13 +17,25 @@ subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
 ## install
 
+Open Terminal, pre-install things:
+
+1. Make sure `git` is installed (should be)
+1. Make sure `brew` is installed (`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` or check [Brew website](https://brew.sh/) for the command)
+
 Run this:
 
 ```sh
-git clone https://github.com/tysonwolker/dotfiles.git ~/.dotfiles
+git clone https://github.com/setek/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
+
+Then:
+
+1. Restart computer. Open iTerm2 and ignore Terminal forever.
+1. In Preferences > Profiles > Default (already selected) > General > Command, enter `/bin/zsh`
+
+Now whenever you open iTerm2, it will run `zsh`.
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
@@ -47,7 +60,7 @@ symlinked without extension into `$HOME` when you run `script/bootstrap`.
 
 A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
 above and see what components may mesh up with you.
-[Fork it](https://github.com/holman/dotfiles/fork), remove what you don't
+[Fork it](https://github.com/setek/dotfiles/fork), remove what you don't
 use, and build on what you do use.
 
 ## components
@@ -56,12 +69,14 @@ There's a few special files in the hierarchy.
 
 - **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
   available everywhere.
+- **Brewfile**: This is a list of applications for [Homebrew Cask](http://caskroom.io) to install: things like Chrome and 1Password and stuff. Might want to edit this file before running any initial setup.
 - **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
   environment.
 - **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
   expected to setup `$PATH` or similar.
 - **topic/completion.zsh**: Any file named `completion.zsh` is loaded
   last and is expected to setup autocomplete.
+- **topic/install.sh**: Any file named `install.sh` is executed when you run `script/install`. To avoid being loaded automatically, its extension is `.sh`, not `.zsh`.
 - **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into
   your `$HOME`. This is so you can keep all of those versioned in your dotfiles
   but still keep those autoloaded files in your home directory. These get

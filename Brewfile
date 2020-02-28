@@ -97,14 +97,14 @@ cask 'soundcleod'
 cask 'radiant-player'
 cask 'beardedspice'
 
-# Entertainment applications
-cask 'vlc'
-cask 'deluge'
-cask 'music-manager'
-cask 'subtitles'
-cask 'plex-media-server'
-cask 'google-plus-auto-backup'
-cask'jadengeller-helium'
+# Entertainment applications - NOT FOR WORK -_-#
+# cask 'vlc'
+# cask 'deluge'
+# cask 'music-manager'
+# cask 'subtitles'
+# cask 'plex-media-server'
+# cask 'google-plus-auto-backup'
+# cask'jadengeller-helium'
 
 # Developer Applications
 cask 'paw'
